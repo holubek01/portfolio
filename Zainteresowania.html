@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Tomasz Hołub portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="./static/css/styles.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<meta name="description" content="Porfolio Tomasza Hołuba, studenta Politechniki Wrocławskej">
+    </head>
+    <body onload="loadImages()">
+        <header>
+			<h1 class="logo">Portfolio Tomasz Hołub</h1>
+			<nav class="navbar">
+				<div class="menu-toggle">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+				<ul class="menu-nav">
+				  <li class="nav-item"><a href="./O_mnie.html">O mnie</a></li>
+				  <li class="nav-item"><a href="./Zainteresowania.html">Zainteresowania</a></li>
+				  <li class="nav-item"><a href="./Projekty.html">Projekty</a></li>
+				</ul>
+			  </nav>
+			<!--
+				<nav id="nav">
+					<ul class="menu">
+						<li><a href="./about.html">O mnie</a></li>
+						<li><a href="./hobby.html">Zainteresowania</a></li>
+						<li><a href="./projects.html">Projekty</a></li>
+					</ul>
+				</nav>
+			-->
+		</header>
+		
+		<main>
+			<article class="hobby_list">
+				<h2>Zainteresowania</h2>
+				<section class="hobby_math_IT">
+					<h3>Informatyczne/matematyczne</h3>
+					
+					<h4>Teoria Grafów</h4>
+					<p>
+						Z grafami miałem do czynienia już od początku studiów, jednak na 4 i 5 semestrze studiów moje zainteresowanie tym 
+						tematem wzrosło. Fascynujące jest to, że grafy można wykorzystać w tak wielu dziedzinach informatyki.
+					</p>
+					
+
+					<h4>Aplikacje mobilne</h4>
+					<p>
+						Co prawda dopiero zaczynam zgłębiać temat aplikacji mobilnych, jednak czuję, że jest to coś to mnie interesuje i co chciałbym
+						robić w przyszłości. Mnogość technologii, rozwiązań, interfejsów jest ogromna, przez co możemy tworzyć jedyne w swoim rodzaju, 
+						niepowtarzalne aplikacje, które są wykorzystywane życiu codziennym i pracy.
+					</p>
+				</section>
+
+				<section class="hobby_other">
+					<h3>Pozainformatyczne</h3>
+
+					<h4>Sport</h4>
+					<p>
+						W dzieciństwie trenowałem tenis stołowy, piłkę 
+						nożną oraz badmintona. Później poznałem kolarstwo górskie i skupiłem się głównie na nim. Jest to piękny sport, można 
+						wyrobić sobie świetną kondycję, poznać wiele wspaniałych osób, podziwiać piękne widoki. Z drugiej strony jest on bardzo ciężki oraz wymaga wielu
+						wyrzeczeń. W zimie rower zamieniam na narty zjazdowe oraz biegowe, które 
+						również uwielbiam.
+					</p>
+
+					<h4>Chodzenie po górach</h4>
+					<p>
+						Wyjście w góry jest świetnym pomysłem aby odetchnąć od zgiełku miasta, wyciszyć się po ciężkim dniu w pracy/szkole oraz 
+						podziwiać zapierające dech w piersiach widoki. Ze względu na bliskość gór od rodzinnego miasta w dzieciństwie bywałem w nich prawie codziennie.
+						Nadal staram się regularnie chodzić po górach, lecz ukształtowanie terenu wokół Wrocławia nie ułatwia tego zadania :)
+					</p>
+
+					<h4>Podróże</h4>
+					<p>
+						Jest to według mnie najlepsza metoda na poznawanie innych kultur, ludzi, historii oraz kuchni. Od kilku lat wspólnie z dziewczyną 
+						wyszukujemy lotów oraz innych okazji i podróżujemy kilka razy do roku. Mam nadzieję, że uda mi się zwiedzić 
+						cały świat, ale czas pokaże (jak dotąd udało mi się zwiedzić 14 krajów :) ).
+					</p>
+				</section>
+			</article>
+	
+			
+			<section class="container">
+			  <h2>Zdjęcia z podróży</h2>
+			  <div id="image-gallery">
+				<!--
+				<div class="column">
+				  <div class="image-item">
+					<img src="./static/images/podróże/trip2.JPEG" alt="paris" />
+					<div class="overlay"><span>Widok na Paryż z wieży Montparnasse</span></div>
+				  </div>
+				  <div class="image-item">
+					<img src="./static/images/podróże/trip3.jpg" alt="stockholm" />
+					<div class="overlay"><span>Kościół św. Jakuba w Sztokholmie</span></div>
+				  </div>
+				  <div class="image-item">
+					<img src="./static/images/podróże/trip16.JPEG" alt="batumi" />
+					<div class="overlay"><span>Batumi - Gruzja</span></div>
+				  </div>
+				  <div class="image-item">
+					<img src="./static/images/podróże/trip13.JPEG" alt="cefalu" />
+					<div class="overlay"><span>Cefalu - piękne miasteczko nieopodal Palermo</span></div>
+				  </div>
+				  <div class="image-item">
+					<img src="./static/images/podróże/trip12.JPEG" alt="palermo" />
+					<div class="overlay"><span>Fontanna Pretoria w Palermo</span></div>
+				  </div>
+				 
+				</div>
+				<div class="column">
+				  <div class="image-item">
+					<img src="./static/images/podróże/trip5.JPEG" alt="stockholm" />
+					<div class="overlay"><span>Sztokholm</span></div>
+				  </div>
+				  <div class="image-item">
+					<img src="./static/images/podróże/trip6.JPEG" alt="pompei" />
+					<div class="overlay"><span>Pompeje</span></div>
+				  </div>
+				  <div class="image-item">
+					<img src="./static/images/podróże/trip15.JPEG" alt="malta" />
+					<div class="overlay"><span>Mdina - pierwsza stolica Malty</span></div>
+				  </div>
+				  
+				  <div class="image-item">
+					<img src="./static/images/podróże/trip8.JPEG" alt="milan" />
+					<div class="overlay"><span>Katedra i galeria Emanuela w Mediolanie</span></div>
+				  </div>
+				</div>
+				<div class="column">
+				  <div class="image-item">
+					<img src="./static/images/podróże/trip9.JPEG" alt="lecco" />
+					<div class="overlay"><span>Szczyt Piani d'Erna</span></div>
+				  </div>
+				  <div class="image-item">
+					<img src="./static/images/podróże/trip10.JPEG" alt="varenna" />
+					
+					<div class="overlay"><span>Varenna - Włochy</span></div>
+				  </div>
+				  <div class="image-item">
+					<img src="./static/images/podróże/trip14.JPEG" alt="malta" />
+					<div class="overlay"><span>Valetta - stolica Malty</span></div>
+				  </div>
+				  <div class="image-item">
+					<img src="./static/images/podróże/trip11.JPG" alt="praga" />
+					<div class="overlay"><span>Praga</span></div>
+				  </div>
+				  
+				</div>
+				-->
+			</div>
+			
+			
+			
+			
+			
+			  <h2>Rower i góry</h2>
+			  <div id="image-gallery">
+				<div class="column">
+				 
+				  <div class="image-item">
+					<img src="./static/images/góry_rower/bike1.JPEG" alt="bike" />
+					<div class="overlay"><span>Bike Maraton</span></div>
+				  </div>
+				</div>
+				
+				<div class="column">
+				 
+				  <div class="image-item">
+					<img src="./static/images/góry_rower/bike4.JPEG" alt="mountains" />
+					<div class="overlay"><span>Olszówka</span></div>
+				  </div>		  
+				</div>
+				
+				<div class="column">
+				  <div class="image-item">
+					<img src="./static/images/góry_rower/bike6.JPEG" alt="mountains" />
+					<div class="overlay"><span>Dolomity</span></div>
+				  </div>
+				</div>
+			  </div>
+			</section>
+		
+		</main>
+	
+		
+		<footer id="foo">
+			<h2>Dane kontaktowe</h2>
+			<ul class="foot">
+					<li>e-mail: <b>tomekholubek20@gmail.com</b></li>
+					<li>telefon: <b>690333206</b></li>
+					<li>facebook:  <b><a href="https://www.facebook.com/profile.php?id=100006114918841">Tomek Hołub</a></b></li>
+			</ul>
+	
+		</footer>
+		<script src="./menu.js" type="text/javascript"></script>
+		<script src="./gallery.js" type="text/javascript"></script>
+    </body>
+</html> 

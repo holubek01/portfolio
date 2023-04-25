@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Tomasz Hołub portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="./static/css/styles.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<meta name="description" content="Porfolio Tomasza Hołuba, studenta Politechniki Wrocławskej">
+    </head>
+    <body>
+        <header>
+			<h1 class="logo">Portfolio Tomasz Hołub</h1>
+			<nav class="navbar">
+				<div class="menu-toggle">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+				<ul class="menu-nav">
+				  <li class="nav-item"><a href="./O_mnie.html">O mnie</a></li>
+				  <li class="nav-item"><a href="./Zainteresowania.html">Zainteresowania</a></li>
+				  <li class="nav-item"><a href="./Projekty.html">Projekty</a></li>
+				</ul>
+			  </nav>
+		</header>
+		
+		<main>
+			<article class="projects_list">
+				<h2>Projekty</h2>
+				
+					<section class="projects">
+					<h4>Aplikacja MarchApp</h4>
+					<p>
+						Aplikacja MarchApp to aplikacja do zarządzania marszami przełajowymi, pozwalająca na kontrolowanie przebiegu marszu oraz kolejności
+						uczestników na trasie, rejestrację użytkowników i inne. Powstała ona w 6 osobowym zespole w ubiegłym semestrze. Poniżej znajduje się fragment kodu z klasy zarządzającej skanerem kodów QR.
+					</p>
+					<pre>
+						 <code> 
+		val qrgEncoder = QRGEncoder(code, null, QRGContents.Type.TEXT, smallerDimension)
+		qrgEncoder.colorBlack = Color.WHITE
+		qrgEncoder.colorWhite = Color.BLACK
+		try {
+			bitmap = qrgEncoder.bitmap
+		} catch (e: WriterException) {
+			Log.v(TAG, e.toString())
+		}
+
+		val qrgSaver = QRGSaver()
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+					savePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).getPath() + "/QRCode/"
+				}
+		qrgSaver.save(savePath, code, bitmap, QRGContents.ImageType.IMAGE_JPEG)}
+						</code>
+					</pre>
+					
+					</section>
+					
+					<section class="projects">
+					<h4>Warcaby chińskie</h4>
+					<p>
+						Warcaby chińskie to projekt desktopowy napisany przy użyciu Java Swing, realizowany w zespole 2 osobowym na 
+						przedmiocie Technologie Programowania. Mam duży sentyment do tego projektu, ponieważ był to mój pierwszy tak
+						duży projekt i nauczyłem się wielu przydatnych rzeczy oraz pracy w niewielkim zespole :)
+					</p>
+					<pre>
+						 <code> 
+		ExecutorServicepool= Executors.newFixedThreadPool(playersNum);
+			
+		Gamegame= Game.getInstance(playersNum, cogsNum);
+		
+		
+		for(int i=0; i @lt playersNum; i++)
+		{
+			game.addPlayer(game.newPlayer(ss.accept(), i));
+		}
+		
+		game.whoStarts();
+		
+		for(inti=0; i @lt playersNum; i++)
+		{
+			pool.execute(game.getPlayers()[i]);
+		}
+		pool.shutdown();
+		pool.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+				</code>
+					</pre>
+					</section>
+					
+					<section class="projects">
+					<h4>Kompilator</h4>
+					<p>
+						Był to legendarny projekt realizowany na przedmiocie JFTT w ubiegłym semestrze. Polegał na napisaniu programu kompilującego 
+						prosty język imperatywny (stworzony przez prowadzącego) na assemblera (również stworzonego przez prowadzącego). Był to najcięższy projekt
+						na studiach, zarwałem wiele nocek, ale bardzo dużo nauczyłem się przy jego tworzeniu.
+					</p>
+					<pre>
+						 <code> 
+		struct Action* add_get_params_from_proc(int tmp, int k)
+		{
+			struct Action* ptr=(Action*)malloc(sizeof(struct Action));
+			set_action_values2(ptr, AST_GET_PARAMS, tmp, 1, 1);
+			ptr->actions=(Action**)malloc(sizeof(struct Action*));
+			ptr->actions[0] = add_action2(AST_IDENTIFIER, k);
+		return ptr;
+		}
+
+				</code>
+					</pre>
+					</section>
+
+				
+
+			
+		</article>
+		
+		
+		<section class="container">
+		  <h2>Zdjęcia</h2>
+		  <div id="image-gallery">
+			<div class="column">
+			 
+			  <div class="image-item">
+				<img src="./static/images/projects/app1.png" alt="marchapp" />
+				<div class="overlay"><span>Marchapp - ekran logowania</span></div>
+			  </div>
+			  
+			</div>
+			
+			<div class="column">
+			 
+			  <div class="image-item">
+				<img src="./static/images/projects/app2.png" alt="marchapp" />
+				<div class="overlay"><span>MarchApp - ekran statystyk</span></div>
+			  </div>
+
+					  
+			</div>
+			<div class="column">
+			  <div class="image-item">
+				<img src="./static/images/projects/app3.png" alt="marchapp" />
+				<div class="overlay"><span>Marchapp - ekran podglądu i edycji uczestnika</span></div>
+			  </div>
+			  
+			  <div class="image-item">
+				<img src="./static/images/projects/warcaby.png" alt="warcaby" />
+				<div class="overlay"><span>Warcaby Chińskie</span></div>
+			  </div>
+			  
+			  
+			</div>
+		  </div>
+		</section>
+		</main>
+	
+
+		
+		<footer id="foo">
+			<h2>Dane kontaktowe</h2>
+			<ul class="foot">
+					<li>e-mail: <b>tomekholubek20@gmail.com</b></li>
+					<li>telefon: <b>690333206</b></li>
+					<li>facebook:  <b><a href="https://www.facebook.com/profile.php?id=100006114918841">Tomek Hołub</a></b></li>
+			</ul>
+	
+	</footer>
+	<script src="./menu.js"></script>
+    </body>
+</html> 
