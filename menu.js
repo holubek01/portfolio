@@ -1,6 +1,7 @@
 /*jslint browser:true */
 /*global document */
 
+/*
 const menuToggle = document.querySelector(".menu-toggle");
 const menuNav = document.querySelector(".menu-nav");
 const navItems = document.querySelectorAll(".nav-item");
@@ -128,11 +129,10 @@ if (li.length > 1) {
 }}
 
 
-//pobierz aktualną stronę
-//const currentPage = window.location.pathname.split("/").pop().replace("_"," "); 
 
 navLinks.forEach(function(link) {
     
+    //ustaiamy kliknięty link na aktywny aby zamienił się on miejscami ze środkowym elementem (aby był widoczny)
     link.addEventListener("click", function (event) {
         if (showMenu) {
             // usuwa klase 'active' ze wszystkich linków i dodaje ją tylko do aktualnie klikniętego
@@ -141,7 +141,6 @@ navLinks.forEach(function(link) {
 
         }
     });
-
 
 
     link.addEventListener("mouseover", function () {
@@ -155,5 +154,142 @@ navLinks.forEach(function(link) {
     });
 });
 
+*/
 
 
+
+const menuToggle = document.querySelector(".menu-toggle");
+const menuNav = document.querySelector(".menu-nav");
+const navItems = document.querySelectorAll(".nav-item");
+const navLinks = document.querySelectorAll(".nav-item a");
+const header = document.querySelector('header'); 
+
+header.classList.remove('no-js'); 
+document.documentElement.classList.add('js');
+
+let showMenu = false;
+
+menuToggle.addEventListener("click", toggleMenu);
+window.addEventListener("load", toggleMenuSmall);
+window.addEventListener("resize", toggleMenuSmall);
+
+function toggleMenu() {
+  const ul = document.querySelector('.menu-nav');
+  const li = ul.querySelectorAll('li');
+  const activeLi = ul.querySelector('.active');
+  const middleIndex = Math.floor(li.length / 2);
+  
+  if (!showMenu) {
+    menuToggle.classList.add("close");
+    menuNav.classList.add("show");
+    navItems.forEach((item) => item.classList.add("show"));
+  
+    const activeLink = document.querySelector(".nav-item.active");
+    navItems.forEach((item) => {
+      if (item !== activeLink) {
+        item.classList.remove("show");
+      }
+    });
+  
+    showMenu = true;
+  } else {
+    menuToggle.classList.remove("close");
+    menuNav.classList.remove("show");
+    navItems.forEach((item) => item.classList.remove("show"));
+  
+    const activeLink = document.querySelector(".nav-item.active");
+    navItems.forEach((item) => {
+      if (item !== activeLink) {
+        item.classList.remove("show");
+      }
+    });
+  
+    if (activeLi && li.length > 1) {
+      if (activeLi !== li[middleIndex]) {
+        if (window.innerWidth <= 768) {
+          ul.insertBefore(li[middleIndex], activeLi);
+        }
+      }
+    }
+  
+    showMenu = false;
+  }
+}
+
+function toggleMenuSmall() {
+  if (window.innerWidth <= 768) {
+    menuToggle.classList.remove("hidden");
+    menuToggle.addEventListener("click", toggleMenu);
+  } else {
+    menuToggle.classList.add("hidden");
+    menuToggle.removeEventListener("click", toggleMenu);
+    menuNav.classList.remove("show");
+    navItems.forEach((item) => item.classList.remove("show"));
+    showMenu = false;
+  }
+
+  
+  const currentPage = window.location.pathname.split("/").pop().replace("_"," ");
+
+  navLinks.forEach(function(link) {
+    if (link.getAttribute("href").replace("./", "").replace("_"," ") === currentPage) {
+      link.parentElement.classList.add("active");
+    }
+
+    if (link.getAttribute("href").replace("./", "").replace("_"," ") === "O mnie.html" && currentPage === "index.html" ) {
+        link.parentElement.classList.add("active");
+      }
+
+
+  });
+
+  const ul = document.querySelector('.menu-nav');
+  const activeLi = ul.querySelector('.active');
+  const li = ul.querySelectorAll('li');
+  const middleIndex = Math.floor(li.length / 2);
+  const activeIndex = Array.from(li).indexOf(activeLi);
+
+  if (li.length > 1 && window.innerWidth <= 768) {
+    const firstLi = li[middleIndex];
+    const thirdLi = activeLi;
+    let secondLi;
+    let fourthLi;
+
+    if (activeIndex < middleIndex) {
+      secondLi = li[middleIndex];
+      fourthLi = activeLi.nextElementSibling;
+      ul.insertBefore(secondLi, activeLi);
+      ul.insertBefore(thirdLi, activeLi);
+    } else {
+      secondLi = li[middleIndex];
+      fourthLi = activeLi.previousElementSibling;
+      ul.insertBefore(firstLi, thirdLi.previousElementSibling);
+      ul.insertBefore(thirdLi, secondLi);
+      ul.insertBefore(fourthLi, firstLi);
+    }
+  }
+}
+
+navLinks.forEach(function(link) {
+    
+    //ustaiamy kliknięty link na aktywny aby zamienił się on miejscami ze środkowym elementem (aby był widoczny)
+    link.addEventListener("click", function (event) {
+        if (showMenu) {
+            // usuwa klase 'active' ze wszystkich linków i dodaje ją tylko do aktualnie klikniętego
+            navItems.forEach((navItem) => navItem.classList.remove("active"));
+            event.target.parentElement.classList.add("active");
+
+        }
+    });
+
+
+    link.addEventListener("mouseover", function () {
+        link.style.textShadow = "2px 2px 4px rgba(0,0,0,0.9)";
+        link.style.color = "black";
+    });
+    
+    link.addEventListener("mouseout", function () {
+        link.style.textShadow = "none";
+        link.style.color = "white";
+    });
+});
